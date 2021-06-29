@@ -180,8 +180,8 @@ p{
     line-height: 170px;
     font-size: 70px;
     margin: auto;
-    color: var(--cololr-blue);
-    border: 1px solid var(--cololr-blue);
+    color: var(--color-violet);
+    border: 1px solid var(--color-violet);
     border-radius: 50%;
     margin-bottom: 16px;
 }
@@ -191,7 +191,7 @@ p{
 }
 
 .major__icon:hover i{
-    color: var(--color-pink);
+    color: var(--color-violet);
     transform: rotate(-30deg) scale(1.1);
 }
 
