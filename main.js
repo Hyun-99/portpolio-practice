@@ -11,3 +11,22 @@ document.addEventListener('scroll', () =>{
         navbar.classList.remove('navbar--dark');
     }
 })
+
+
+// 메뉴를 클릭하면 해당 섹션으로 이동
+const navbarMenu = document.querySelector('.navbar__menu');
+navbarMenu.addEventListener('click', (event)=>{
+    
+    const target = event.target;
+    const link = target.dataset.link;
+    if(link == null){
+        return;
+    }
+
+    console.log(event.target.dataset.link);
+    const scrollTo = document.querySelector(link);
+    scrollTo.scrollIntoView({behavior: "smooth"});
+})
+
+
+
