@@ -33,7 +33,22 @@ const contactBtn = document.querySelector('.home__contact');
 })
 
 
+// 화면이 스크롤되면 Home의 내용이 희미해지게 하기
+const home = document.querySelector('.home__container');
+const homeHeight = home.getBoundingClientRect().height;
+      document.addEventListener('scroll',()=>{
+      home.style.opacity = 1 - window.scrollY / homeHeight;
+})
+
+
+
+
+
+
+
 function scrollToView(selector){
     const scrollTo = document.querySelector(selector);
     scrollTo.scrollIntoView({behavior:'smooth'});
 }
+
+
