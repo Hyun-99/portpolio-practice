@@ -22,9 +22,18 @@ navbarMenu.addEventListener('click', (event)=>{
     if(link == null){
         return;
     }
-    const scrollTo = document.querySelector(link);
-    scrollTo.scrollIntoView({behavior: "smooth"});
+    scrollToView(link);
 })
 
 
+// Contact 버튼을 누르면 Contact파트로 가게 하기
+const contactBtn = document.querySelector('.home__contact');
+    contactBtn.addEventListener('click', ()=>{
+    scrollToView('#contact');
+})
 
+
+function scrollToView(selector){
+    const scrollTo = document.querySelector(selector);
+    scrollTo.scrollIntoView({behavior:'smooth'});
+}
