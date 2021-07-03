@@ -60,7 +60,7 @@ arrowUp.addEventListener('click', ()=>{
 
 
 
-// 프로젝트
+// 프로젝트 필터링
 const workBtncontainer = document.querySelector('.work__categories');
 const projectContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.project');
@@ -70,9 +70,13 @@ workBtncontainer.addEventListener('click', (e)=>{
         return;
     }
 
-    projectContainer.classList.add('anim-out');
+    // 버튼을 클릭하면 색이 들어오게 만들기
+    const active = document.querySelector('.category__btn.selected');
+    active.classList.remove('selected');
+    const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
+    target.classList.add('selected');
 
-   
+    projectContainer.classList.add('anim-out');
 
    setTimeout(()=>{
     projects.forEach((project)=>{
