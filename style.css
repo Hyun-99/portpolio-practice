@@ -397,6 +397,7 @@ p{
     opacity: 0;
     transform: translateY(10px);
     transition: all var(--animation-duration) ease-in;
+    padding: 5px;
 }
 
 .project:hover .project__description{
@@ -409,15 +410,15 @@ p{
     display: block;
     position: relative;
     left: 50%;
-    width: 25px;
-    height: 2px;
+    width: 60px;
+    height: 1px;
     background-color: var(--color-white);
     margin-top: 8px;
-    margin-left: -12px;
+    margin-left: -28px;
 }
 
 .project__description h3{
-    color: var(--color-white);
+    color: var(--color-violet)
 }
 
 
@@ -524,6 +525,11 @@ p{
     #navbar{
         flex-direction: column;
         align-items: flex-start;
+        background-color: var(--color-violet);
+    }
+
+    #navbar.navbar--dark{
+        padding: 16px;
     }
 
     .navbar__menu{
@@ -531,6 +537,10 @@ p{
         text-align: center;
         width: 100%;
         display: none;
+    }
+
+    .navbar__menu.open{
+        display: block;
     }
 
     .about__majors{

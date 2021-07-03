@@ -22,8 +22,18 @@ navbarMenu.addEventListener('click', (event)=>{
     if(link == null){
         return;
     }
+
+    navbarMenu.classList.remove('open');
     scrollToView(link);
 })
+
+
+// 작은 화면일 때 토글버튼
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+navbarToggleBtn.addEventListener('click', ()=>{
+    navbarMenu.classList.toggle('open');
+})
+
 
 
 // Contact 버튼을 누르면 Contact파트로 가게 하기
