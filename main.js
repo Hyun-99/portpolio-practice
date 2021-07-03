@@ -41,7 +41,22 @@ const homeHeight = home.getBoundingClientRect().height;
 })
 
 
+// 화면이 스크롤되면 위로가기 버튼이 나타나게 하기
+const arrowUp = document.querySelector('.arrow-up');
+document.addEventListener('scroll', ()=>{
+    if(window.scrollY > homeHeight/2){
+        arrowUp.classList.add('visible');
+    }
+    else{
+        arrowUp.classList.remove('visible');
+    }
+})
 
+
+// Arrow-up 버튼을 누르면 위로 올라가게 하기
+arrowUp.addEventListener('click', ()=>{
+    scrollToView('#home');
+})
 
 
 
