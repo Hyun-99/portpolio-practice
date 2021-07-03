@@ -44,7 +44,7 @@ const homeHeight = home.getBoundingClientRect().height;
 // 화면이 스크롤되면 위로가기 버튼이 나타나게 하기
 const arrowUp = document.querySelector('.arrow-up');
 document.addEventListener('scroll', ()=>{
-    if(window.scrollY > homeHeight/2){
+    if(window.scrollY > homeHeight){
         arrowUp.classList.add('visible');
     }
     else{
@@ -57,6 +57,36 @@ document.addEventListener('scroll', ()=>{
 arrowUp.addEventListener('click', ()=>{
     scrollToView('#home');
 })
+
+
+
+// 프로젝트
+const workBtncontainer = document.querySelector('.work__categories');
+const projectContainer = document.querySelector('.work__projects');
+const projects = document.querySelectorAll('.project');
+workBtncontainer.addEventListener('click', (e)=>{
+    const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
+    if(filter == null){
+        return;
+    }
+
+    projectContainer.classList.add('anim-out');
+
+   
+
+   setTimeout(()=>{
+    projects.forEach((project)=>{
+        if(filter === '*' || filter === project.dataset.type){
+            project.classList.remove('invisible');
+        }
+        else{
+            project.classList.add('invisible');
+        }
+       });
+    projectContainer.classList.remove('anim-out');
+   },300)
+})
+
 
 
 
